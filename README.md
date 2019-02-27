@@ -1,19 +1,19 @@
-# Biblioteca Online
+\n# Biblioteca Online
 
-Descripción:
-Programa para facilitar el préstamo de libros a través de un fichero.
+\nDescripción:
+\nPrograma para facilitar el préstamo de libros a través de un fichero.
 
-## Integrantes del equipo
+\n## Integrantes del equipo
 
-Dayana Izquierdo Saavedra, Daizsaa
-María Canga Ortiz, mariacanga
-Hanan El Boudakhani Ballafkih, hananelboud
+\nDayana Izquierdo Saavedra, Daizsaa
+\nMaría Canga Ortiz, mariacanga
+\nHanan El Boudakhani Ballafkih, hananelboud
 
-## Objetivos del trabajo
+\n## Objetivos del trabajo
 
-Lista de los objetivos que se persiguen con el trabajo propuesto.
-Registrar usuarios mediante nombre o num matrícula
-Seleccionar libro por categoría
-Disponibilidad de los libros
-Ver tu historial de préstamos
-Devoluciones
+\nLista de los objetivos que se persiguen con el trabajo propuesto.
+\nRegistrar usuarios mediante nombre o num matrícula
+\nSeleccionar libro por categoría
+\nDisponibilidad de los libros
+\nVer tu historial de préstamos
+\nDevoluciones
