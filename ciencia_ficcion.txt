@@ -1,0 +1,15 @@
+1 1984 - George Orwell
+2 El juego de Ender - Orson Scott Card
+3 Dune - Frank Herbert
+4 Saga de la Fundación - Isaac Asimov
+5 Guía del autoestopista galáctico - Douglas Adams
+6 El problema de los tres cuerpos - Cixin Liu
+7 La chica mecánica - Paolo Bacigalupi
+8 Las estrellas son legión - Kameron Hurley
+9 Los cantos de Hyperion - Dan Simmons
+10 Solaris - Stanislaw Lem
+11 Mundo Anillo - Larry Niven
+12 Fahrenheit 451 - Ray Bradbury
+13 La mano izquierda de la oscuridad - Ursula K. Le Guin
+14 Los juegos del hambre - Suzanne Collins
+15 Starship Troopers - Robert Heinlein
