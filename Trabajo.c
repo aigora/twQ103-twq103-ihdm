@@ -6,17 +6,19 @@ struct Usuario{
 };
 
 int main() {
-	FILE *puntero;
+	FILE *punteroU;
+	FILE *punteroM;
 	struct Usuario usuario[100];
 	int i;
 	char opcion, opcion2;
+	int opcion3;
 	char nombreLibro[50];
-	char autorLibro[50];
 	
 	system("color 70");
-	printf("\tBIENVENIDO A LA LIBRERIA MAJADA\n");
+	printf("\tBIENVENIDO A LA BIBLIOTECA MAJADA\n");
 	
 	do{
+		system("cls");
 		printf("\t ________________________\n");
 		printf("\t|                        |\n");
 		printf("\t| A-Registrarse          |\n");
@@ -27,13 +29,27 @@ int main() {
 		printf ("Introduce la opcion: \n");
 		fflush(stdin);
 		scanf("%c", &opcion);
+	} while(opcion!='A'&&opcion!='B'&&opcion!='C');
+	
+	do{
+		/*system("cls");
+		printf("\t ________________________\n");
+		printf("\t|                        |\n");
+		printf("\t| A-Registrarse          |\n");
+		printf("\t| B-Iniciar sesion       |\n");
+		printf("\t| C-Salir del programa   |\n");
+		printf("\t|________________________|\n");
+		printf("\n\n");
+		printf ("Introduce la opcion: \n");
+		fflush(stdin);
+		scanf("%c", &opcion);*/
 		
 		switch (opcion){
 			case 'A': 
-				printf("Introduce tu nombre y apellido:\n");
+				printf("Introduce nombre de usuario:\n");
 				fflush(stdin);
 				gets(usuario[i].nombre);
-				printf("Introduce tu contraseña:\n");
+				printf("Introduce tu contraseÃ±a:\n");
 				fflush(stdin);
 				gets(usuario[i].password);
 				
@@ -48,30 +64,35 @@ int main() {
 				
 				if(opcion2=='A'){
 					do {
-						//Misterio, Ciencia ficción, Romantica, Terror, Poesía
-						printf("\t\t\tA-Misterio\n");
-						printf("\t\t\tB-Ciencia ficcion\n");
-						printf("\t\t\tC-Romantica\n");
-						printf("\t\t\tD-Terror\n");
-						printf("\t\t\tE-Poesia\n");
-						printf("\t\t\tF-Fin del programa\n");
+						//Misterio, Ciencia ficciÃ³n, Romantica, Terror, PoesÃ­a
+						printf("\t\t\t1-Misterio\n");
+						printf("\t\t\t2-Ciencia ficcion\n");
+						printf("\t\t\t3-Romantica\n");
+						printf("\t\t\t4-Terror\n");
+						printf("\t\t\t5-Poesia\n");
+						printf("\t\t\t6-Fin del programa\n");
 						printf ("Introduce la opcion: \n");
 						fflush(stdin);
-						scanf("%c", &opcion3);
-					} while(opcion3<'A'||opcion3>'F');
+						scanf("%d", &opcion3);
+					} while(opcion3<'1'||opcion3>'6');
 					
-					puntero = fopen("novelas.txt", "r");
-					if(puntero==NULL){
-						printf("No se ha podido abrir el fichero\n");
-						return -1;
+					if(opcion3==1){
+						punteroM = fopen("misterio.txt", "r");
+						if(punteroM==NULL){
+							printf("No se ha podido abrir el fichero\n");
+							return -1;
+						}
+						
+						i=0;
+						while(fscanf(punteroM, "%s", nombreLibro)!=EOF){
+							fprintf(punteroM, "%s \n", nombreLibro);
+							i++;
+						}
+						fclose(punteroM);
 					}
-					
-					i=0;
-					while(fscanf(puntero, "%s %s", nombreLibro, autorLibro)!=EOF){
-						fprintf(puntero, "%s %s \n", nombreLibro, autorLibro);
-						i++;
+					else if(opcion3==2){
+						
 					}
-					fclose(puntero);
 				}
 				
 				break;
@@ -106,7 +127,7 @@ int main() {
 				printf ("Opcion incorrecta\n");
 				break;
 		}
-	} while(opcion!='C');
+	} while(opcion2!='C');
 }
 /*
 puntero = fopen("usuarios.txt", "w");
