@@ -1,15 +1,15 @@
-1.Toda la verdad de mis mentiras - Elisabet Benavent
-2.Forastera - Diana Gabaldon
-3.Orgullo y prejuicio - Jane Austen
-4.El jinete de bronce - Paullina Simons
-5.Jane Eyre - Charlotte Bronte
-6.Las hijas de la villa de las telas - Anne Jacobs
-7.La epidemia de la primavera - Empar Fernandez
-8.Seremos recuerdos - Elisabet Benavent
-9.Esperame en Nueva York - Caroline March
-10.Te doy mi corazón - Julia Quinn
-11.Despues de ti - Jojo Moyes
-12.Antes de ti - Jojo Moyes
-13.Muchachas de uniforme - Tereska Torres
-14.Amor con vistas al mar - Eva Zamora
-15.Los dragones nunca se enamoran - Olga de Llera
+Toda_la_verdad_de_mis_mentiras Elisabet_Benavent
+Forastera Diana Gabaldon
+Orgullo_y_prejuicio Jane Austen
+El_jinete_de_bronce Paullina_Simons
+Jane_Eyre Charlotte_Bronte
+Las_hijas_de_la_villa_de_las_telas Anne_Jacobs
+La_epidemia_de_la_primavera Empar_Fernandez
+Seremos_recuerdos Elisabet_Benavent
+Esperame_en_Nueva_York Caroline_March
+Te_doy_mi_corazÃ³n Julia_Quinn
+Despues_de_ti Jojo_Moyes
+Antes_de_ti Jojo_Moyes
+Muchachas_de_uniforme Tereska_Torres
+Amor_con_vistas_al_mar Eva_Zamora
+Los_dragones_nunca_se_enamoran Olga_de_Llera
