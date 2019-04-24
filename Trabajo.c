@@ -11,8 +11,9 @@ int main() {
 	struct Usuario usuario[100];
 	int i;
 	char opcion, opcion2;
-	int opcion3;
+	int opcion3, opcion4;
 	char nombreLibro[50];
+	char nombreAutor[50];
 	
 	system("color 70");
 	printf("\tBIENVENIDO A LA BIBLIOTECA MAJADA\n");
@@ -74,25 +75,47 @@ int main() {
 						printf ("Introduce la opcion: \n");
 						fflush(stdin);
 						scanf("%d", &opcion3);
-					} while(opcion3<'1'||opcion3>'6');
 					
-					if(opcion3==1){
-						punteroM = fopen("misterio.txt", "r");
-						if(punteroM==NULL){
-							printf("No se ha podido abrir el fichero\n");
-							return -1;
+					
+						if(opcion3==1){
+							printf("\n\n\t\tMISTERIO\n\n");
+							punteroM = fopen("misterio.txt", "r");
+							if(punteroM==NULL){
+								printf("No se ha podido abrir el fichero\n");
+								return -1;
+							}
+							
+							i=0;
+							while(fscanf(punteroM, "%s\t%s", nombreLibro, nombreAutor)!=EOF){
+								printf("%d\t%s\t%s\n", i+1, nombreLibro, nombreAutor);
+								i++;
+							}
+							printf("\n");
+							
+							printf("Escoge un libro\n");
+							scanf("%d", &opcion4);
+							if(i==opcion4){
+								printf("%s\t%s", nombreLibro[i], nombreAutor[i]);
+							}
+							fclose(punteroM);
 						}
-						
-						i=0;
-						while(fscanf(punteroM, "%s", nombreLibro)!=EOF){
-							fprintf(punteroM, "%s \n", nombreLibro);
-							i++;
+						else if(opcion3==2){
+							
 						}
-						fclose(punteroM);
-					}
-					else if(opcion3==2){
-						
-					}
+						else if(opcion3==3){
+							
+						}
+						else if(opcion3==4){
+							
+						}
+						else if(opcion3==5){
+							
+						}
+						else if(opcion3==6){
+							printf("Fin del programa\n");
+							break;
+						}
+					} while(opcion3<'1'||opcion3>'6');
 				}
 				
 				break;
