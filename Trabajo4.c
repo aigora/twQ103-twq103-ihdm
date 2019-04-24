@@ -70,7 +70,7 @@ int main() {
 				
 				if(opcion2=='A'){
 					do {
-						//Misterio, Ciencia ficción, Romantica, Terror, Poesía
+						//Misterio, Ciencia ficciÃ³n, Romantica, Terror, PoesÃ­a
 						printf("\t\t\t1-Misterio\n");
 						printf("\t\t\t2-Ciencia ficcion\n");
 						printf("\t\t\t3-Romantica\n");
@@ -238,6 +238,7 @@ int main() {
 				break;
 		}
 	} while(opcion!='C');
+	
 	
 	
 }
