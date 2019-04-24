@@ -59,7 +59,7 @@ int main() {
 				
 				if(opcion2=='A'){
 					do {
-						//Misterio, Ciencia ficción, Romantica, Terror, Poesía
+						//Misterio, Ciencia ficciÃ³n, Romantica, Terror, PoesÃ­a
 						printf("\t\t\t1-Misterio\n");
 						printf("\t\t\t2-Ciencia ficcion\n");
 						printf("\t\t\t3-Romantica\n");
@@ -84,6 +84,7 @@ int main() {
 								printf("\t%d\t%s\t%s\n", i, misterio[i].nombreLibro, misterio[i].nombreAutor);
 								i++;
 							}
+							fclose(punteroM);
 							printf("\n");
 							
 							do{
@@ -95,8 +96,6 @@ int main() {
 							printf("\t\t%s de %s.\n\n", misterio[opcion4].nombreLibro, misterio[opcion4].nombreAutor);	
 							printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
 							printf("\tGracias por usar el sistema.\n\n");
-							fclose(punteroM);
-							
 						}
 						else if(opcion3==2){
 							printf("\n\n\t\tCIENCIA FICCION\n\n");
@@ -111,6 +110,7 @@ int main() {
 								printf("\t%d\t%s\t%s\n", i, ciencia_ficcion[i].nombreLibro, ciencia_ficcion[i].nombreAutor);
 								i++;
 							}
+							fclose(punteroM);
 							printf("\n");
 							
 							do{
@@ -122,7 +122,6 @@ int main() {
 							printf("\t\t%s de %s.\n\n", ciencia_ficcion[opcion4].nombreLibro, ciencia_ficcion[opcion4].nombreAutor);	
 							printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
 							printf("\tGracias por usar el sistema.\n\n");
-							fclose(punteroM);
 						}
 						else if(opcion3==3){
 							printf("\n\n\t\tROMANTICA\n\n");
@@ -137,6 +136,7 @@ int main() {
 								printf("\t%d\t%s\t%s\n", i, romantica[i].nombreLibro, romantica[i].nombreAutor);
 								i++;
 							}
+							fclose(punteroM);
 							printf("\n");
 							
 							do{
@@ -148,7 +148,6 @@ int main() {
 							printf("\t\t%s de %s.\n\n", romantica[opcion4].nombreLibro, romantica[opcion4].nombreAutor);	
 							printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
 							printf("\tGracias por usar el sistema.\n\n");
-							fclose(punteroM);
 						}
 						else if(opcion3==4){
 							printf("\n\n\t\tTERROR\n\n");
@@ -163,6 +162,7 @@ int main() {
 								printf("\t%d\t%s\t%s\n", i, terror[i].nombreLibro, terror[i].nombreAutor);
 								i++;
 							}
+							fclose(punteroM);
 							printf("\n");
 							
 							do{
@@ -174,7 +174,6 @@ int main() {
 							printf("\t\t%s de %s.\n\n", terror[opcion4].nombreLibro, terror[opcion4].nombreAutor);	
 							printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
 							printf("\tGracias por usar el sistema.\n\n");
-							fclose(punteroM);
 						}
 						else if(opcion3==5){
 							printf("\n\n\t\tPOESIA\n\n");
@@ -189,6 +188,7 @@ int main() {
 								printf("\t%d\t%s\t%s\n", i, poesia[i].nombreLibro, poesia[i].nombreAutor);
 								i++;
 							}
+							fclose(punteroM);
 							printf("\n");
 							
 							do{
@@ -200,7 +200,6 @@ int main() {
 							printf("\t\t%s de %s.\n\n", poesia[opcion4].nombreLibro, poesia[opcion4].nombreAutor);	
 							printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
 							printf("\tGracias por usar el sistema.\n\n");
-							fclose(punteroM);
 						}
 						else if(opcion3==6){
 							printf("Fin del programa\n");
