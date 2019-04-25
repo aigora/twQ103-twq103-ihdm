@@ -1,4 +1,6 @@
 #include <stdio.h>
+#define MAX_USUSUARIOS 100
+#define MAX_LIBROS 15
 
 struct Usuario{
 	char nombre[50];
@@ -12,13 +14,14 @@ struct Libro{
 };
 
 int main() {
-	FILE *punteroU;
-	FILE *punteroM;
-	struct Usuario usuario[100];
-	struct Libro misterio[15], ciencia_ficcion[15], romantica[15], terror[15], poesia[15];
+	FILE *fichero;
+	FILE *fichero2;
+	struct Usuario usuario[MAX_USUSUARIOS];
+	struct Libro misterio[MAX_LIBROS], ciencia_ficcion[MAX_LIBROS], romantica[MAX_LIBROS], terror[MAX_LIBROS], poesia[MAX_LIBROS];
 	int i, j;
 	char opcion, opcion2;
 	int opcion3, opcion4;
+	int numUsuarios=0;
 	
 	system("color 70");
 	printf("\tBIENVENIDO A LA BIBLIOTECA MAJADA\n");
@@ -38,13 +41,22 @@ int main() {
 		
 		switch (opcion){
 			case 'A': 
-				printf("Introduce nombre de usuario:\n");
+				fichero = fopen("usuario.txt", "r");
+				if (fichero == NULL) {
+					printf("No se ha podido abrir el fichero\n");
+					return -1; 
+				}
+				i=0;
+				while (fscanf(fichero, "%d %s %s", &usuario[i].identificador, usuario[i].nombre, usuario[i].password)!=EOF) {
+					i++;
+				}
+				fclose(fichero);
+				
+				printf("Introduzca nombre y contrasena del usuario\n");
 				usuario[i].identificador=i;
+				scanf("%s %s",usuario[i].nombre, usuario[i].password);
 				fflush(stdin);
-				gets(usuario[i].nombre);
-				printf("Introduce tu contrasena:\n");
-				fflush(stdin);
-				gets(usuario[i].password);
+				i++;
 				system("cls");
 				
 				do {
@@ -73,18 +85,18 @@ int main() {
 					
 						if(opcion3==1){
 							printf("\n\n\t\tMISTERIO\n\n");
-							punteroM = fopen("misterio.txt", "r");
-							if(punteroM==NULL){
+							fichero2 = fopen("misterio.txt", "r");
+							if(fichero2==NULL){
 								printf("No se ha podido abrir el fichero\n");
 								return -1;
 							}
 							
 							i=1;
-							while(fscanf(punteroM, "%s\t%s", misterio[i].nombreLibro, misterio[i].nombreAutor)!=EOF){
+							while(fscanf(fichero2, "%s\t%s", misterio[i].nombreLibro, misterio[i].nombreAutor)!=EOF){
 								printf("\t%d\t%s\t%s\n", i, misterio[i].nombreLibro, misterio[i].nombreAutor);
 								i++;
 							}
-							fclose(punteroM);
+							fclose(fichero2);
 							printf("\n");
 							
 							do{
@@ -99,18 +111,18 @@ int main() {
 						}
 						else if(opcion3==2){
 							printf("\n\n\t\tCIENCIA FICCION\n\n");
-							punteroM = fopen("ciencia_ficcion.txt", "r");
-							if(punteroM==NULL){
+							fichero2 = fopen("ciencia_ficcion.txt", "r");
+							if(fichero2==NULL){
 								printf("No se ha podido abrir el fichero\n");
 								return -1;
 							}
 							
 							i=1;
-							while(fscanf(punteroM, "%s\t%s", ciencia_ficcion[i].nombreLibro, ciencia_ficcion[i].nombreAutor)!=EOF){
+							while(fscanf(fichero2, "%s\t%s", ciencia_ficcion[i].nombreLibro, ciencia_ficcion[i].nombreAutor)!=EOF){
 								printf("\t%d\t%s\t%s\n", i, ciencia_ficcion[i].nombreLibro, ciencia_ficcion[i].nombreAutor);
 								i++;
 							}
-							fclose(punteroM);
+							fclose(fichero2);
 							printf("\n");
 							
 							do{
@@ -125,18 +137,18 @@ int main() {
 						}
 						else if(opcion3==3){
 							printf("\n\n\t\tROMANTICA\n\n");
-							punteroM = fopen("romantica.txt", "r");
-							if(punteroM==NULL){
+							fichero2 = fopen("romantica.txt", "r");
+							if(fichero2==NULL){
 								printf("No se ha podido abrir el fichero\n");
 								return -1;
 							}
 							
 							i=1;
-							while(fscanf(punteroM, "%s\t%s", romantica[i].nombreLibro, romantica[i].nombreAutor)!=EOF){
+							while(fscanf(fichero2, "%s\t%s", romantica[i].nombreLibro, romantica[i].nombreAutor)!=EOF){
 								printf("\t%d\t%s\t%s\n", i, romantica[i].nombreLibro, romantica[i].nombreAutor);
 								i++;
 							}
-							fclose(punteroM);
+							fclose(fichero2);
 							printf("\n");
 							
 							do{
@@ -151,18 +163,18 @@ int main() {
 						}
 						else if(opcion3==4){
 							printf("\n\n\t\tTERROR\n\n");
-							punteroM = fopen("terror.txt", "r");
-							if(punteroM==NULL){
+							fichero2 = fopen("terror.txt", "r");
+							if(fichero2==NULL){
 								printf("No se ha podido abrir el fichero\n");
 								return -1;
 							}
 							
 							i=1;
-							while(fscanf(punteroM, "%s\t%s", terror[i].nombreLibro, terror[i].nombreAutor)!=EOF){
+							while(fscanf(fichero2, "%s\t%s", terror[i].nombreLibro, terror[i].nombreAutor)!=EOF){
 								printf("\t%d\t%s\t%s\n", i, terror[i].nombreLibro, terror[i].nombreAutor);
 								i++;
 							}
-							fclose(punteroM);
+							fclose(fichero2);
 							printf("\n");
 							
 							do{
@@ -177,18 +189,18 @@ int main() {
 						}
 						else if(opcion3==5){
 							printf("\n\n\t\tPOESIA\n\n");
-							punteroM = fopen("poesia.txt", "r");
-							if(punteroM==NULL){
+							fichero2 = fopen("poesia.txt", "r");
+							if(fichero2==NULL){
 								printf("No se ha podido abrir el fichero\n");
 								return -1;
 							}
 							
 							i=1;
-							while(fscanf(punteroM, "%s\t%s", poesia[i].nombreLibro, poesia[i].nombreAutor)!=EOF){
+							while(fscanf(fichero2, "%s\t%s", poesia[i].nombreLibro, poesia[i].nombreAutor)!=EOF){
 								printf("\t%d\t%s\t%s\n", i, poesia[i].nombreLibro, poesia[i].nombreAutor);
 								i++;
 							}
-							fclose(punteroM);
+							fclose(fichero2);
 							printf("\n");
 							
 							do{
@@ -205,6 +217,9 @@ int main() {
 							printf("Fin del programa\n");
 						}
 					} while(opcion3<1||opcion3!=6||opcion3>6);
+				}
+				else if(opcion2=='B'){
+					
 				}
 				
 				break;
@@ -227,16 +242,17 @@ int main() {
 		}
 	} while(opcion!='C');
 	
-	punteroU=fopen("usuario.txt", "w");
-	if(punteroU==NULL){
+	fichero = fopen("usuario.txt", "w");
+	
+	if (fichero == NULL) {
 		printf("No se ha podido abrir el fichero\n");
 		return -1;
 	}
+		
 	
-	i=0;
-	while (fscanf(punteroU, "%s %s", usuario[i].nombre, usuario[i].password)!=EOF){
-		fprintf(punteroU, "%s\t%s\n", usuario[i].nombre, usuario[i].password);
-		i++;
+	for(j=0;j<i;j++){
+		fprintf(fichero,"%d\t%s\t%s\n", usuario[j].identificador, usuario[j].nombre, usuario[j].password);
 	}
-	fclose(punteroU);
+		
+	fclose(fichero); 
 }
