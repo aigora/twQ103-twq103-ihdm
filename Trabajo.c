@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #define MAX_USUSUARIOS 100
 #define MAX_LIBROS 15
 
@@ -48,19 +49,33 @@ int main() {
 				}
 				i=0;
 				while (fscanf(fichero, "%d %s %s", &usuario[i].identificador, usuario[i].nombre, usuario[i].password)!=EOF) {
+					numUsuarios++;
 					i++;
 				}
 				fclose(fichero);
 				
 				printf("Nombre usuario:\n");
-				usuario[i].identificador=i;
+				usuario[i].identificador=i+1;
 				fflush(stdin);
 				gets(usuario[i].nombre);
 				printf("Contrasena usuario:\n");
 				fflush(stdin);
 				gets(usuario[i].password);
-				i++;
 				system("cls");
+				for(i=0; i<numUsuarios; i++){
+					if(strcmp(usuario[i].nombre, usuario[numUsuarios].nombre)==0){
+						printf("Este usuario ya existe\n");
+						printf("Nombre usuario:\n");
+						usuario[i].identificador=i+1;
+						fflush(stdin);
+						gets(usuario[i].nombre);
+						printf("Contrasena usuario:\n");
+						fflush(stdin);
+						gets(usuario[i].password);
+						system("cls");
+					}
+				}
+				i++;
 				
 				fichero = fopen("usuario.txt", "w");
 	
@@ -258,18 +273,4 @@ int main() {
 				break;
 		}
 	} while(opcion!='C');
-	/*
-	fichero = fopen("usuario.txt", "w");
-	
-	if (fichero == NULL) {
-		printf("No se ha podido abrir el fichero\n");
-		return -1;
-	}
-		
-	
-	for(j=0;j<i;j++){
-		fprintf(fichero,"%d\t%s\t%s\n", usuario[j].identificador, usuario[j].nombre, usuario[j].password);
-	}
-		
-	fclose(fichero); */
 }
