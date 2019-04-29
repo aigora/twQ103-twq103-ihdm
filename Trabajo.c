@@ -52,12 +52,29 @@ int main() {
 				}
 				fclose(fichero);
 				
-				printf("Introduzca nombre y contrasena del usuario\n");
+				printf("Nombre usuario:\n");
 				usuario[i].identificador=i;
-				scanf("%s %s",usuario[i].nombre, usuario[i].password);
 				fflush(stdin);
+				gets(usuario[i].nombre);
+				printf("Contrasena usuario:\n");
+				fflush(stdin);
+				gets(usuario[i].password);
 				i++;
 				system("cls");
+				
+				fichero = fopen("usuario.txt", "w");
+	
+				if (fichero == NULL) {
+					printf("No se ha podido abrir el fichero\n");
+					return -1;
+				}
+					
+				
+				for(j=0;j<i;j++){
+					fprintf(fichero,"%d\t%s\t%s\n", usuario[j].identificador, usuario[j].nombre, usuario[j].password);
+				}
+					
+				fclose(fichero);
 				
 				do {
 					printf("\n\t\t\tA-Libros\n");
@@ -241,7 +258,7 @@ int main() {
 				break;
 		}
 	} while(opcion!='C');
-	
+	/*
 	fichero = fopen("usuario.txt", "w");
 	
 	if (fichero == NULL) {
@@ -254,5 +271,5 @@ int main() {
 		fprintf(fichero,"%d\t%s\t%s\n", usuario[j].identificador, usuario[j].nombre, usuario[j].password);
 	}
 		
-	fclose(fichero); 
+	fclose(fichero); */
 }
