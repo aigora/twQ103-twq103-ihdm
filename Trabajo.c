@@ -130,172 +130,182 @@ int main() {
 				break;
 			case 'C':
 				printf("Fin del programa.\n");
-				break;
+				return -1;
 			default:
 				printf ("Opcion incorrecta\n");
 				break;
 		}
-		do {
-			printf("\n\t\t\tA-Libros\n");
-			printf("\t\t\tB-Historial\n");
-			printf("\t\t\tC-Fin del programa\n");
-			printf ("Introduce la opcion: \n");
-			fflush(stdin);
-			scanf("%c", &opcion2);
-		} while(opcion2<'A'||opcion2>'C');
+	} while(opcion<'A'||opcion>'C');
+	
+	do {
+		printf("\n\t\t\tA-Libros\n");
+		printf("\t\t\tB-Historial\n");
+		printf("\t\t\tC-Fin del programa\n");
+		printf ("Introduce la opcion: \n");
+		fflush(stdin);
+		scanf("%c", &opcion2);
 		system("cls");
 		
-		if(opcion2=='A'){
-			do {
-				//Misterio, Ciencia ficción, Romantica, Terror, Poesía
-				printf("\t\t\t1-Misterio\n");
-				printf("\t\t\t2-Ciencia ficcion\n");
-				printf("\t\t\t3-Romantica\n");
-				printf("\t\t\t4-Terror\n");
-				printf("\t\t\t5-Poesia\n");
-				printf("\t\t\t6-Vuelta al menu\n");
-				printf ("Introduce la opcion: \n");
-				fflush(stdin);
-				scanf("%d", &opcion3);
-				system("cls");
-			
-				if(opcion3==1){
-					printf("\n\n\t\tMISTERIO\n\n");
-					fichero2 = fopen("misterio.txt", "r");
-					if(fichero2==NULL){
-						printf("No se ha podido abrir el fichero\n");
-						return -1;
-					}
-					
-					i=1;
-					while(fscanf(fichero2, "%s\t%s", misterio[i].nombreLibro, misterio[i].nombreAutor)!=EOF){
-						printf("\t%d\t%s\t%s\n", i, misterio[i].nombreLibro, misterio[i].nombreAutor);
-						i++;
-					}
-					fclose(fichero2);
-					printf("\n");
-					
-					do{
-						printf("Escoge un libro\n");
-						scanf("%d", &opcion4);
-					}while(opcion4<1||opcion4>15);
+		switch (opcion2){
+			case 'A':
+				do {
+					//Misterio, Ciencia ficción, Romantica, Terror, Poesía
+					printf("\t\t\t1-Misterio\n");
+					printf("\t\t\t2-Ciencia ficcion\n");
+					printf("\t\t\t3-Romantica\n");
+					printf("\t\t\t4-Terror\n");
+					printf("\t\t\t5-Poesia\n");
+					printf("\t\t\t6-Vuelta al menu\n");
+					printf ("Introduce la opcion: \n");
+					fflush(stdin);
+					scanf("%d", &opcion3);
 					system("cls");
-					printf("\n\tSu eleccion ha sido:\n\n"); 
-					printf("\t\t%s de %s.\n\n", misterio[opcion4].nombreLibro, misterio[opcion4].nombreAutor);	
-					printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
-					printf("\tGracias por usar el sistema.\n\n");
-				}
-				else if(opcion3==2){
-					printf("\n\n\t\tCIENCIA FICCION\n\n");
-					fichero2 = fopen("ciencia_ficcion.txt", "r");
-					if(fichero2==NULL){
-						printf("No se ha podido abrir el fichero\n");
-						return -1;
+				
+					if(opcion3==1){
+						printf("\n\n\t\tMISTERIO\n\n");
+						fichero2 = fopen("misterio.txt", "r");
+						if(fichero2==NULL){
+							printf("No se ha podido abrir el fichero\n");
+							return -1;
+						}
+						
+						i=1;
+						while(fscanf(fichero2, "%s\t%s", misterio[i].nombreLibro, misterio[i].nombreAutor)!=EOF){
+							printf("\t%d\t%s\t%s\n", i, misterio[i].nombreLibro, misterio[i].nombreAutor);
+							i++;
+						}
+						fclose(fichero2);
+						printf("\n");
+						
+						do{
+							printf("Escoge un libro\n");
+							scanf("%d", &opcion4);
+						}while(opcion4<1||opcion4>15);
+						system("cls");
+						printf("\n\tSu eleccion ha sido:\n\n"); 
+						printf("\t\t%s de %s.\n\n", misterio[opcion4].nombreLibro, misterio[opcion4].nombreAutor);	
+						printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
+						printf("\tGracias por usar el sistema.\n\n");
+						/*
+						printf("_ _ _\n");
+						printf("Pulse enter para continuar\n");
+						*/ //Para hacerlo copiarlo del ejemplo en que lo hicimos (no lo he encontrado)
 					}
-					
-					i=1;
-					while(fscanf(fichero2, "%s\t%s", ciencia_ficcion[i].nombreLibro, ciencia_ficcion[i].nombreAutor)!=EOF){
-						printf("\t%d\t%s\t%s\n", i, ciencia_ficcion[i].nombreLibro, ciencia_ficcion[i].nombreAutor);
-						i++;
+					else if(opcion3==2){
+						printf("\n\n\t\tCIENCIA FICCION\n\n");
+						fichero2 = fopen("ciencia_ficcion.txt", "r");
+						if(fichero2==NULL){
+							printf("No se ha podido abrir el fichero\n");
+							return -1;
+						}
+						
+						i=1;
+						while(fscanf(fichero2, "%s\t%s", ciencia_ficcion[i].nombreLibro, ciencia_ficcion[i].nombreAutor)!=EOF){
+							printf("\t%d\t%s\t%s\n", i, ciencia_ficcion[i].nombreLibro, ciencia_ficcion[i].nombreAutor);
+							i++;
+						}
+						fclose(fichero2);
+						printf("\n");
+						
+						do{
+							printf("Escoge un libro\n");
+							scanf("%d", &opcion4);
+						}while(opcion4<1||opcion4>15);
+						system("cls");
+						printf("\n\tSu eleccion ha sido:\n\n"); 
+						printf("\t\t%s de %s.\n\n", ciencia_ficcion[opcion4].nombreLibro, ciencia_ficcion[opcion4].nombreAutor);	
+						printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
+						printf("\tGracias por usar el sistema.\n\n");
 					}
-					fclose(fichero2);
-					printf("\n");
-					
-					do{
-						printf("Escoge un libro\n");
-						scanf("%d", &opcion4);
-					}while(opcion4<1||opcion4>15);
-					system("cls");
-					printf("\n\tSu eleccion ha sido:\n\n"); 
-					printf("\t\t%s de %s.\n\n", ciencia_ficcion[opcion4].nombreLibro, ciencia_ficcion[opcion4].nombreAutor);	
-					printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
-					printf("\tGracias por usar el sistema.\n\n");
-				}
-				else if(opcion3==3){
-					printf("\n\n\t\tROMANTICA\n\n");
-					fichero2 = fopen("romantica.txt", "r");
-					if(fichero2==NULL){
-						printf("No se ha podido abrir el fichero\n");
-						return -1;
+					else if(opcion3==3){
+						printf("\n\n\t\tROMANTICA\n\n");
+						fichero2 = fopen("romantica.txt", "r");
+						if(fichero2==NULL){
+							printf("No se ha podido abrir el fichero\n");
+							return -1;
+						}
+						
+						i=1;
+						while(fscanf(fichero2, "%s\t%s", romantica[i].nombreLibro, romantica[i].nombreAutor)!=EOF){
+							printf("\t%d\t%s\t%s\n", i, romantica[i].nombreLibro, romantica[i].nombreAutor);
+							i++;
+						}
+						fclose(fichero2);
+						printf("\n");
+						
+						do{
+							printf("Escoge un libro\n");
+							scanf("%d", &opcion4);
+						}while(opcion4<1||opcion4>15);
+						system("cls");
+						printf("\n\tSu eleccion ha sido:\n\n"); 
+						printf("\t\t%s de %s.\n\n", romantica[opcion4].nombreLibro, romantica[opcion4].nombreAutor);	
+						printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
+						printf("\tGracias por usar el sistema.\n\n");
 					}
-					
-					i=1;
-					while(fscanf(fichero2, "%s\t%s", romantica[i].nombreLibro, romantica[i].nombreAutor)!=EOF){
-						printf("\t%d\t%s\t%s\n", i, romantica[i].nombreLibro, romantica[i].nombreAutor);
-						i++;
+					else if(opcion3==4){
+						printf("\n\n\t\tTERROR\n\n");
+						fichero2 = fopen("terror.txt", "r");
+						if(fichero2==NULL){
+							printf("No se ha podido abrir el fichero\n");
+							return -1;
+						}
+						
+						i=1;
+						while(fscanf(fichero2, "%s\t%s", terror[i].nombreLibro, terror[i].nombreAutor)!=EOF){
+							printf("\t%d\t%s\t%s\n", i, terror[i].nombreLibro, terror[i].nombreAutor);
+							i++;
+						}
+						fclose(fichero2);
+						printf("\n");
+						
+						do{
+							printf("Escoge un libro\n");
+							scanf("%d", &opcion4);
+						}while(opcion4<1||opcion4>15);
+						system("cls");
+						printf("\n\tSu eleccion ha sido:\n\n"); 
+						printf("\t\t%s de %s.\n\n", terror[opcion4].nombreLibro, terror[opcion4].nombreAutor);	
+						printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
+						printf("\tGracias por usar el sistema.\n\n");
 					}
-					fclose(fichero2);
-					printf("\n");
-					
-					do{
-						printf("Escoge un libro\n");
-						scanf("%d", &opcion4);
-					}while(opcion4<1||opcion4>15);
-					system("cls");
-					printf("\n\tSu eleccion ha sido:\n\n"); 
-					printf("\t\t%s de %s.\n\n", romantica[opcion4].nombreLibro, romantica[opcion4].nombreAutor);	
-					printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
-					printf("\tGracias por usar el sistema.\n\n");
-				}
-				else if(opcion3==4){
-					printf("\n\n\t\tTERROR\n\n");
-					fichero2 = fopen("terror.txt", "r");
-					if(fichero2==NULL){
-						printf("No se ha podido abrir el fichero\n");
-						return -1;
+					else if(opcion3==5){
+						printf("\n\n\t\tPOESIA\n\n");
+						fichero2 = fopen("poesia.txt", "r");
+						if(fichero2==NULL){
+							printf("No se ha podido abrir el fichero\n");
+							return -1;
+						}
+						
+						i=1;
+						while(fscanf(fichero2, "%s\t%s", poesia[i].nombreLibro, poesia[i].nombreAutor)!=EOF){
+							printf("\t%d\t%s\t%s\n", i, poesia[i].nombreLibro, poesia[i].nombreAutor);
+							i++;
+						}
+						fclose(fichero2);
+						printf("\n");
+						
+						do{
+							printf("Escoge un libro\n");
+							scanf("%d", &opcion4);
+						}while(opcion4<1||opcion4>15);
+						system("cls");
+						printf("\n\tSu eleccion ha sido:\n\n"); 
+						printf("\t\t%s de %s.\n\n", poesia[opcion4].nombreLibro, poesia[opcion4].nombreAutor);	
+						printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
+						printf("\tGracias por usar el sistema.\n\n");
 					}
-					
-					i=1;
-					while(fscanf(fichero2, "%s\t%s", terror[i].nombreLibro, terror[i].nombreAutor)!=EOF){
-						printf("\t%d\t%s\t%s\n", i, terror[i].nombreLibro, terror[i].nombreAutor);
-						i++;
+					else if(opcion3<1||opcion3>6){
+						printf("Opcion incorrecta.\n");
 					}
-					fclose(fichero2);
-					printf("\n");
-					
-					do{
-						printf("Escoge un libro\n");
-						scanf("%d", &opcion4);
-					}while(opcion4<1||opcion4>15);
-					system("cls");
-					printf("\n\tSu eleccion ha sido:\n\n"); 
-					printf("\t\t%s de %s.\n\n", terror[opcion4].nombreLibro, terror[opcion4].nombreAutor);	
-					printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
-					printf("\tGracias por usar el sistema.\n\n");
-				}
-				else if(opcion3==5){
-					printf("\n\n\t\tPOESIA\n\n");
-					fichero2 = fopen("poesia.txt", "r");
-					if(fichero2==NULL){
-						printf("No se ha podido abrir el fichero\n");
-						return -1;
-					}
-					
-					i=1;
-					while(fscanf(fichero2, "%s\t%s", poesia[i].nombreLibro, poesia[i].nombreAutor)!=EOF){
-						printf("\t%d\t%s\t%s\n", i, poesia[i].nombreLibro, poesia[i].nombreAutor);
-						i++;
-					}
-					fclose(fichero2);
-					printf("\n");
-					
-					do{
-						printf("Escoge un libro\n");
-						scanf("%d", &opcion4);
-					}while(opcion4<1||opcion4>15);
-					system("cls");
-					printf("\n\tSu eleccion ha sido:\n\n"); 
-					printf("\t\t%s de %s.\n\n", poesia[opcion4].nombreLibro, poesia[opcion4].nombreAutor);	
-					printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
-					printf("\tGracias por usar el sistema.\n\n");
-				}
-				else if(opcion3<1||opcion3>6){
-					printf("Opcion incorrecta.\n");
-				}
-			} while(opcion3<1||opcion3>6||opcion!=6);
+				} while(opcion3!=6);
+				break;
+			case 'B':
+				break;
+			case 'C':
+				printf("Fin del programa\n");
+				break;
 		}
-		else if(opcion2=='B'){
-			
-		}
-	} while(opcion!='C');
+	} while(opcion2!='C');
+	system("cls");
 }
