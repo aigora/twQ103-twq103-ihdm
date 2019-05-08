@@ -1,7 +1,7 @@
 # Biblioteca Online
 
 Descripción:
-Programa para facilitar el préstamo de libros a través de un fichero.
+Programa útil para poder ver la disponibilidad de libros de distintas categorías literarias mediante inicio de sesión. Cuenta también con información adicional útil para el usuario
 
 ## Integrantes del equipo
 
