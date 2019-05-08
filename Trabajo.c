@@ -14,6 +14,8 @@ struct Libro{
 	char nombreAutor[50];
 };
 
+int usuarios(char opcion);
+
 int main() {
 	FILE *fichero;
 	FILE *fichero2;
@@ -43,90 +45,10 @@ int main() {
 		
 		switch (opcion){
 			case 'A': 
-				fichero = fopen("usuario.txt", "r");
-				if (fichero == NULL) {
-					printf("No se ha podido abrir el fichero\n");
-					return -1; 
-				}
-				i=0;
-				while (fscanf(fichero, "%d %s %s", &usuario[i].identificador, usuario[i].nombre, usuario[i].password)!=EOF) {
-					numUsuarios++;
-					i++;
-				}
-				fclose(fichero);
-				
-				printf("Nombre usuario:\n");
-				usuario[i].identificador=i+1;
-				fflush(stdin);
-				gets(usuario[i].nombre);
-				printf("Contrasena usuario:\n");
-				fflush(stdin);
-				gets(usuario[i].password);
-				system("cls");
-				for(i=0; i<numUsuarios; i++){
-					if(strcmp(usuario[i].nombre, usuario[numUsuarios].nombre)==0){
-						printf("Este usuario ya existe\n");
-						printf("Nombre usuario:\n");
-						usuario[i].identificador=i+1;
-						fflush(stdin);
-						gets(usuario[i].nombre);
-						printf("Contrasena usuario:\n");
-						fflush(stdin);
-						gets(usuario[i].password);
-						system("cls");
-					}
-				}
-				i++;
-				
-				fichero = fopen("usuario.txt", "w");
-	
-				if (fichero == NULL) {
-					printf("No se ha podido abrir el fichero\n");
-					return -1;
-				}
-					
-				
-				for(j=0;j<i;j++){
-					fprintf(fichero,"%d\t%s\t%s\n", usuario[j].identificador, usuario[j].nombre, usuario[j].password);
-				}
-					
-				fclose(fichero);
-				
+				usuarios('A');
 				break;
 			case 'B':
-				fichero = fopen("usuario.txt", "r");
-				if (fichero == NULL) {
-					printf("No se ha podido abrir el fichero\n");
-					return -1; 
-				}
-				i=0;
-				while (fscanf(fichero, "%d %s %s", &usuario[i].identificador, usuario[i].nombre, usuario[i].password)!=EOF) {
-					numUsuarios++;
-					i++;
-				}
-				fclose(fichero);
-				
-				
-				do{
-					printf("Nombre usuario:\n");
-					usuario[i].identificador=i+1;
-					fflush(stdin);
-					gets(usuario[i].nombre);
-					printf("Contrasena usuario:\n");
-					fflush(stdin);
-					gets(usuario[i].password);
-					system("cls");
-					for(i=0; i<numUsuarios; i++){
-						if(strcmp(usuario[i].password, usuario[numUsuarios].password)==0&&strcmp(usuario[i].nombre, usuario[numUsuarios].nombre)==0){
-							nombreIgual++;
-						}
-						system("cls");
-					}
-					if(nombreIgual==0){
-						printf("Nombre usuario o contrasena incorrecta\n");
-					}
-				}while(nombreIgual!=1);
-				i++;
+				usuarios('B');
 				break;
 			case 'C':
 				printf("Fin del programa.\n");
@@ -138,7 +60,7 @@ int main() {
 	} while(opcion<'A'||opcion>'C');
 	
 	do {
-		printf("\n\t\t\tA-Libros\n");
+		printf("\t\t\tA-Libros\n");
 		printf("\t\t\tB-Historial\n");
 		printf("\t\t\tC-Fin del programa\n");
 		printf ("Introduce la opcion: \n");
@@ -188,11 +110,12 @@ int main() {
 							printf("\t\t%s de %s.\n\n", misterio[opcion4].nombreLibro, misterio[opcion4].nombreAutor);	
 							printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
 							printf("\tGracias por usar el sistema.\n\n");
+							
+							getchar();
+							printf("_ _ _\n");
+							printf("Pulse enter para continuar\n");
+							getchar();
 						}
-						getchar();
-						printf("_ _ _\n");
-						printf("Pulse enter para continuar\n");
-						getchar();
 						system("cls");
 					}
 					else if(opcion3==2){
@@ -222,11 +145,12 @@ int main() {
 							printf("\t\t%s de %s.\n\n", ciencia_ficcion[opcion4].nombreLibro, ciencia_ficcion[opcion4].nombreAutor);	
 							printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
 							printf("\tGracias por usar el sistema.\n\n");
+							
+							getchar();
+							printf("_ _ _\n");
+							printf("Pulse enter para continuar\n");
+							getchar();
 						}
-						getchar();
-						printf("_ _ _\n");
-						printf("Pulse enter para continuar\n");
-						getchar();
 						system("cls");
 					}
 					else if(opcion3==3){
@@ -256,11 +180,12 @@ int main() {
 							printf("\t\t%s de %s.\n\n", romantica[opcion4].nombreLibro, romantica[opcion4].nombreAutor);	
 							printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
 							printf("\tGracias por usar el sistema.\n\n");
+							
+							getchar();
+							printf("_ _ _\n");
+							printf("Pulse enter para continuar\n");
+							getchar();
 						}
-						getchar();
-						printf("_ _ _\n");
-						printf("Pulse enter para continuar\n");
-						getchar();
 						system("cls");
 					}
 					else if(opcion3==4){
@@ -290,11 +215,12 @@ int main() {
 							printf("\t\t%s de %s.\n\n", terror[opcion4].nombreLibro, terror[opcion4].nombreAutor);	
 							printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
 							printf("\tGracias por usar el sistema.\n\n");
+							
+							getchar();
+							printf("_ _ _\n");
+							printf("Pulse enter para continuar\n");
+							getchar();
 						}
-						getchar();
-						printf("_ _ _\n");
-						printf("Pulse enter para continuar\n");
-						getchar();
 						system("cls");
 					}
 					else if(opcion3==5){
@@ -324,11 +250,12 @@ int main() {
 							printf("\t\t%s de %s.\n\n", poesia[opcion4].nombreLibro, poesia[opcion4].nombreAutor);	
 							printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
 							printf("\tGracias por usar el sistema.\n\n");
+							
+							getchar();
+							printf("_ _ _\n");
+							printf("Pulse enter para continuar\n");
+							getchar();
 						}
-						getchar();
-						printf("_ _ _\n");
-						printf("Pulse enter para continuar\n");
-						getchar();
 						system("cls");
 					}
 					else if(opcion3<1||opcion3>6){
@@ -345,3 +272,148 @@ int main() {
 	} while(opcion2!='C');
 	system("cls");
 }
+
+int usuarios(char opcion){
+	FILE *fichero;
+	struct Usuario usuario[MAX_USUSUARIOS];
+	int i, j;
+	int numUsuarios=0;
+	int nombreIgual=0;
+	
+	fichero = fopen("usuario.txt", "r");
+	if (fichero == NULL) {
+		printf("No se ha podido abrir el fichero\n");
+		return -1; 
+	}
+	i=0;
+	while (fscanf(fichero, "%d %s %s", &usuario[i].identificador, usuario[i].nombre, usuario[i].password)!=EOF) {
+		numUsuarios++;
+		i++;
+	}
+	fclose(fichero);
+	
+	if (opcion=='A'){
+		printf("Nombre usuario:\n");
+		usuario[i].identificador=i+1;
+		fflush(stdin);
+		gets(usuario[i].nombre);
+		printf("Contrasena usuario:\n");
+		fflush(stdin);
+		gets(usuario[i].password);
+		system("cls");
+		for(i=0; i<numUsuarios; i++){
+			if(strcmp(usuario[i].nombre, usuario[numUsuarios].nombre)==0){
+				printf("Este usuario ya existe, utilice otro:\n\n");
+				printf("Nombre usuario:\n");
+				usuario[i].identificador=i+1;
+				fflush(stdin);
+				gets(usuario[i].nombre);
+				printf("Contrasena usuario:\n");
+				fflush(stdin);
+				gets(usuario[i].password);
+				system("cls");
+			}
+		}
+		i++;
+		
+		fichero = fopen("usuario.txt", "w");
+
+		if (fichero == NULL) {
+			printf("No se ha podido abrir el fichero\n");
+			return -1;
+		}
+			
+		
+		for(j=0;j<i;j++){
+			fprintf(fichero,"%d\t%s\t%s\n", usuario[j].identificador, usuario[j].nombre, usuario[j].password);
+		}
+			
+		fclose(fichero);
+	}
+	else if(opcion=='B'){
+		do{
+			printf("Nombre usuario:\n");
+			usuario[i].identificador=i+1;
+			fflush(stdin);
+			gets(usuario[i].nombre);
+			printf("Contrasena usuario:\n");
+			fflush(stdin);
+			gets(usuario[i].password);
+			system("cls");
+			for(i=0; i<numUsuarios; i++){
+				if(strcmp(usuario[i].password, usuario[numUsuarios].password)==0&&strcmp(usuario[i].nombre, usuario[numUsuarios].nombre)==0){
+					nombreIgual++;
+				}
+				system("cls");
+			}
+			if(nombreIgual==0){
+				printf("Usuario o contrasena incorrecta\n\n");
+			}
+		}while(nombreIgual!=1);
+		i++;
+	}
+}
+/*
+char Misterio(){
+	FILE *fichero2;
+	struct Libro misterio[MAX_LIBROS];
+	int i;
+	int opcion4;
+	
+	printf("\n\n\t\tMISTERIO\n\n");
+	fichero2 = fopen("misterio.txt", "r");
+	if(fichero2==NULL){
+		printf("No se ha podido abrir el fichero\n");
+		return -1;
+	}
+	
+	i=1;
+	while(fscanf(fichero2, "%s\t%s", misterio[i].nombreLibro, misterio[i].nombreAutor)!=EOF){
+		printf("\t%d\t%s\t%s\n", i, misterio[i].nombreLibro, misterio[i].nombreAutor);
+		i++;
+	}
+	fclose(fichero2);
+	printf("\n\t0-Volver a las secciones de libros\n\n");
+}
+
+char CienciaFicccion(){
+	FILE *fichero2;
+	struct Libro ciencia_ficcion[MAX_LIBROS];
+	int i;
+	int opcion4;
+	
+	printf("\n\n\t\tCIENCIA FICCION\n\n");
+	fichero2 = fopen("ciencia_ficcion.txt", "r");
+	if(fichero2==NULL){
+		printf("No se ha podido abrir el fichero\n");
+		return -1;
+	}
+	
+	i=1;
+	while(fscanf(fichero2, "%s\t%s", ciencia_ficcion[i].nombreLibro, ciencia_ficcion[i].nombreAutor)!=EOF){
+		printf("\t%d\t%s\t%s\n", i, ciencia_ficcion[i].nombreLibro, ciencia_ficcion[i].nombreAutor);
+		i++;
+	}
+	fclose(fichero2);
+	printf("\n\t0-Volver a las secciones de libros\n\n");
+	
+	do{
+		printf("Escoge un libro\n");
+		scanf("%d", &opcion4);
+	}while(opcion4<0||opcion4>15);
+	system("cls");
+	
+	if(opcion4!=0){
+		printf("\n\tSu eleccion ha sido:\n\n"); 
+		printf("\t\t%s de %s.\n\n", ciencia_ficcion[opcion4].nombreLibro, ciencia_ficcion[opcion4].nombreAutor);	
+		printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
+		printf("\tGracias por usar el sistema.\n\n");
+		
+		getchar();
+		printf("_ _ _\n");
+		printf("Pulse enter para continuar\n");
+		getchar();
+	}
+	system("cls");
+}
+*/
