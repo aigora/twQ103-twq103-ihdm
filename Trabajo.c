@@ -175,17 +175,20 @@ int main() {
 							i++;
 						}
 						fclose(fichero2);
-						printf("\n");
+						printf("\n\t0-Volver a las secciones de libros\n\n");
 						
 						do{
 							printf("Escoge un libro\n");
 							scanf("%d", &opcion4);
-						}while(opcion4<1||opcion4>15);
+						}while(opcion4<0||opcion4>15);
 						system("cls");
-						printf("\n\tSu eleccion ha sido:\n\n"); 
-						printf("\t\t%s de %s.\n\n", misterio[opcion4].nombreLibro, misterio[opcion4].nombreAutor);	
-						printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
-						printf("\tGracias por usar el sistema.\n\n");
+						
+						if(opcion4!=0){
+							printf("\n\tSu eleccion ha sido:\n\n"); 
+							printf("\t\t%s de %s.\n\n", misterio[opcion4].nombreLibro, misterio[opcion4].nombreAutor);	
+							printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
+							printf("\tGracias por usar el sistema.\n\n");
+						}
 						/*
 						printf("_ _ _\n");
 						printf("Pulse enter para continuar\n");
@@ -205,17 +208,20 @@ int main() {
 							i++;
 						}
 						fclose(fichero2);
-						printf("\n");
+						printf("\n\t0-Volver a las secciones de libros\n\n");
 						
 						do{
 							printf("Escoge un libro\n");
 							scanf("%d", &opcion4);
-						}while(opcion4<1||opcion4>15);
+						}while(opcion4<0||opcion4>15);
 						system("cls");
-						printf("\n\tSu eleccion ha sido:\n\n"); 
-						printf("\t\t%s de %s.\n\n", ciencia_ficcion[opcion4].nombreLibro, ciencia_ficcion[opcion4].nombreAutor);	
-						printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
-						printf("\tGracias por usar el sistema.\n\n");
+						
+						if(opcion4!=0){
+							printf("\n\tSu eleccion ha sido:\n\n"); 
+							printf("\t\t%s de %s.\n\n", ciencia_ficcion[opcion4].nombreLibro, ciencia_ficcion[opcion4].nombreAutor);	
+							printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
+							printf("\tGracias por usar el sistema.\n\n");
+						}
 					}
 					else if(opcion3==3){
 						printf("\n\n\t\tROMANTICA\n\n");
@@ -231,17 +237,20 @@ int main() {
 							i++;
 						}
 						fclose(fichero2);
-						printf("\n");
+						printf("\n\t0-Volver a las secciones de libros\n\n");
 						
 						do{
 							printf("Escoge un libro\n");
 							scanf("%d", &opcion4);
-						}while(opcion4<1||opcion4>15);
+						}while(opcion4<0||opcion4>15);
 						system("cls");
-						printf("\n\tSu eleccion ha sido:\n\n"); 
-						printf("\t\t%s de %s.\n\n", romantica[opcion4].nombreLibro, romantica[opcion4].nombreAutor);	
-						printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
-						printf("\tGracias por usar el sistema.\n\n");
+						
+						if(opcion4!=0){
+							printf("\n\tSu eleccion ha sido:\n\n"); 
+							printf("\t\t%s de %s.\n\n", romantica[opcion4].nombreLibro, romantica[opcion4].nombreAutor);	
+							printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
+							printf("\tGracias por usar el sistema.\n\n");
+						}
 					}
 					else if(opcion3==4){
 						printf("\n\n\t\tTERROR\n\n");
@@ -257,17 +266,20 @@ int main() {
 							i++;
 						}
 						fclose(fichero2);
-						printf("\n");
+						printf("\n\t0-Volver a las secciones de libros\n\n");
 						
 						do{
 							printf("Escoge un libro\n");
 							scanf("%d", &opcion4);
-						}while(opcion4<1||opcion4>15);
+						}while(opcion4<0||opcion4>15);
 						system("cls");
-						printf("\n\tSu eleccion ha sido:\n\n"); 
-						printf("\t\t%s de %s.\n\n", terror[opcion4].nombreLibro, terror[opcion4].nombreAutor);	
-						printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
-						printf("\tGracias por usar el sistema.\n\n");
+						
+						if(opcion4!=0){
+							printf("\n\tSu eleccion ha sido:\n\n"); 
+							printf("\t\t%s de %s.\n\n", terror[opcion4].nombreLibro, terror[opcion4].nombreAutor);	
+							printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
+							printf("\tGracias por usar el sistema.\n\n");
+						}
 					}
 					else if(opcion3==5){
 						printf("\n\n\t\tPOESIA\n\n");
@@ -283,17 +295,20 @@ int main() {
 							i++;
 						}
 						fclose(fichero2);
-						printf("\n");
+						printf("\n\t0-Volver a las secciones de libros\n\n");
 						
 						do{
 							printf("Escoge un libro\n");
 							scanf("%d", &opcion4);
-						}while(opcion4<1||opcion4>15);
+						}while(opcion4<0||opcion4>15);
 						system("cls");
-						printf("\n\tSu eleccion ha sido:\n\n"); 
-						printf("\t\t%s de %s.\n\n", poesia[opcion4].nombreLibro, poesia[opcion4].nombreAutor);	
-						printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
-						printf("\tGracias por usar el sistema.\n\n");
+						
+						if(opcion4!=0){
+							printf("\n\tSu eleccion ha sido:\n\n"); 
+							printf("\t\t%s de %s.\n\n", poesia[opcion4].nombreLibro, poesia[opcion4].nombreAutor);	
+							printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
+							printf("\tGracias por usar el sistema.\n\n");
+						}
 					}
 					else if(opcion3<1||opcion3>6){
 						printf("Opcion incorrecta.\n");
