@@ -189,10 +189,11 @@ int main() {
 							printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
 							printf("\tGracias por usar el sistema.\n\n");
 						}
-						/*
+						getchar();
 						printf("_ _ _\n");
 						printf("Pulse enter para continuar\n");
-						*/ //Para hacerlo copiarlo del ejemplo en que lo hicimos (no lo he encontrado)
+						getchar();
+						system("cls");
 					}
 					else if(opcion3==2){
 						printf("\n\n\t\tCIENCIA FICCION\n\n");
@@ -222,6 +223,11 @@ int main() {
 							printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
 							printf("\tGracias por usar el sistema.\n\n");
 						}
+						getchar();
+						printf("_ _ _\n");
+						printf("Pulse enter para continuar\n");
+						getchar();
+						system("cls");
 					}
 					else if(opcion3==3){
 						printf("\n\n\t\tROMANTICA\n\n");
@@ -251,6 +257,11 @@ int main() {
 							printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
 							printf("\tGracias por usar el sistema.\n\n");
 						}
+						getchar();
+						printf("_ _ _\n");
+						printf("Pulse enter para continuar\n");
+						getchar();
+						system("cls");
 					}
 					else if(opcion3==4){
 						printf("\n\n\t\tTERROR\n\n");
@@ -280,6 +291,11 @@ int main() {
 							printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
 							printf("\tGracias por usar el sistema.\n\n");
 						}
+						getchar();
+						printf("_ _ _\n");
+						printf("Pulse enter para continuar\n");
+						getchar();
+						system("cls");
 					}
 					else if(opcion3==5){
 						printf("\n\n\t\tPOESIA\n\n");
@@ -309,6 +325,11 @@ int main() {
 							printf("\tDirigete a recepcion para recoger tu libro. \n\tDevolucion maxima de un mes.\n");
 							printf("\tGracias por usar el sistema.\n\n");
 						}
+						getchar();
+						printf("_ _ _\n");
+						printf("Pulse enter para continuar\n");
+						getchar();
+						system("cls");
 					}
 					else if(opcion3<1||opcion3>6){
 						printf("Opcion incorrecta.\n");
