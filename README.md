@@ -11,9 +11,8 @@ Hanan El Boudakhani Ballafkih, hananelboud.
 
 ## Objetivos del trabajo
 
-Lista de los objetivos que se persiguen con el trabajo propuesto.
-Registrar usuarios mediante nombre o num matrícula.
+Lista de los objetivos que se persiguen con el trabajo propuesto:
+Registrar usuarios mediante nombre y contraseña.
+Iniciar sesión.
 Seleccionar libro por categoría.
-Disponibilidad de los libros.
-Ver tu historial de préstamos.
-twQ103-twq103-ihdmDevoluciones.
+Mostrar información general sobre la biblioteca.
