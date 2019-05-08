@@ -17,15 +17,11 @@ struct Libro{
 int usuarios(char opcion);
 
 int main() {
-	FILE *fichero;
 	FILE *fichero2;
-	struct Usuario usuario[MAX_USUSUARIOS];
 	struct Libro misterio[MAX_LIBROS], ciencia_ficcion[MAX_LIBROS], romantica[MAX_LIBROS], terror[MAX_LIBROS], poesia[MAX_LIBROS];
 	int i, j;
 	char opcion, opcion2;
 	int opcion3, opcion4;
-	int numUsuarios=0;
-	int nombreIgual=0;
 	
 	system("color 70");
 	printf("\tBIENVENIDO A LA BIBLIOTECA MAJADA\n");
