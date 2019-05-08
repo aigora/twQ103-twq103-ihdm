@@ -61,7 +61,7 @@ int main() {
 	
 	do {
 		printf("\t\t\tA-Libros\n");
-		printf("\t\t\tB-Historial\n");
+		printf("\t\t\tB-Informacion general\n");
 		printf("\t\t\tC-Fin del programa\n");
 		printf ("Introduce la opcion: \n");
 		fflush(stdin);
@@ -112,7 +112,7 @@ int main() {
 							printf("\tGracias por usar el sistema.\n\n");
 							
 							getchar();
-							printf("_ _ _\n");
+							printf("\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n");
 							printf("Pulse enter para continuar\n");
 							getchar();
 						}
@@ -264,7 +264,24 @@ int main() {
 				} while(opcion3!=6);
 				break;
 			case 'B':
-				break;
+				printf("_____________________________________________________________________________________________________________________________\n\n");
+				printf("\t\tDireccion: Ronda de Valencia, 3\n");
+				printf("\t\t           28012 Madrid\n");
+				printf("\t\t           Spain\n");
+				printf("\t\t           Tel.: 912 458 258\n");
+				printf("_____________________________________________________________________________________________________________________________\n\n");
+				printf("\t\tTransporte: Metro y cercanias: Embajadores\n");
+				printf("\t\t            Autobuses: 54, 113, 27 y C1\n");
+				printf("_____________________________________________________________________________________________________________________________\n\n");
+				printf("\t\tHorarios: De Lunes a Viernes de 9:00 a 21:00 h\n");
+				printf("\t\t          Todos los dias los servicios de prestamo y acceso a internet finalizaran 15 minutos antes del cierre.\n");
+				
+				getchar();
+				printf("\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n");
+				printf("Pulse enter para continuar\n");
+				getchar();
+				system("cls");
+				break;	
 			case 'C':
 				printf("Fin del programa\n");
 				break;
